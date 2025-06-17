@@ -29,8 +29,8 @@ public class CharacterServiceImpl implements CharacterService {
 
     @Override
     public RnMCharacter getRandomCharacter() {
-        return characterRepository.findAll()
-                .get((int) new Random().nextLong(characterRepository.count()));
+        List<RnMCharacter> characters = characterRepository.findAll();
+        return characters.get(new Random().nextInt(characters.size()));
     }
 
     @Override
