@@ -33,7 +33,7 @@ public class CharacterClient {
                     .readValue(response.body(), RnMResponseDataDto.class);
             return dataDto.getResults();
         } catch (IOException | InterruptedException e) {
-            throw new RuntimeException("Could not get characters from API");
+            throw new RuntimeException("Could not get characters from API", e);
         }
     }
 }

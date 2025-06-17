@@ -30,7 +30,7 @@ public class CharacterServiceImpl implements CharacterService {
     @Override
     public RnMCharacter getRandomCharacter() {
         return characterRepository.findAll()
-                .get(new Random().nextInt(characterRepository.findAll().size()));
+                .get((int) new Random().nextLong(characterRepository.count()));
     }
 
     @Override
